@@ -4,25 +4,25 @@
             "height": 2048,
             "width": 3072,
             "id": 1,
-            "file_name": "/content/test/val2017/031.png"
+            "file_name": "/content/detr/val2017/031.png"
         },
         {
             "height": 2048,
             "width": 3072,
             "id": 2,
-            "file_name": "/content/test/val2017/032.png"
+            "file_name": "/content/detr/val2017/032.png"
         },
         {
             "height": 2048,
             "width": 3072,
             "id": 3,
-            "file_name": "/content/test/val2017/034.png"
+            "file_name": "/content/detr/val2017/034.png"
         },
         {
             "height": 2048,
             "width": 3072,
             "id": 4,
-            "file_name": "/content/test/val2017/035.png"
+            "file_name": "/content/detr/val2017/035.png"
         }
     ],
     "categories": [
