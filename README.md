@@ -206,7 +206,7 @@ The transformer is trained with dropout of 0.1, and the whole model is trained w
 ## Evaluation
 To evaluate DETR R50 on COCO val5k with a single GPU run:
 ```
-python main.py --batch_size 2 --no_aux_loss --eval --resume https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth --coco_path /path/to/coco
+python main.py --no_aux_loss --eval --resume https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth --coco_path /path/to/coco
 ```
 We provide results for all DETR detection models in this
 [gist](https://gist.github.com/szagoruyko/9c9ebb8455610958f7deaa27845d7918).
@@ -214,6 +214,11 @@ Note that numbers vary depending on batch size (number of images) per GPU.
 Non-DC5 models were trained with batch size 2, and DC5 with 1,
 so DC5 models show a significant drop in AP if evaluated with more
 than 1 image per GPU.
+
+## Detection
+```
+python main.py --no_aux_loss --detect --resume ./output/checkpoint0999.pth --coco_path ./ --num_classes=7
+```
 
 ## Multinode training
 Distributed training is available via Slurm and [submitit](https://github.com/facebookincubator/submitit):
