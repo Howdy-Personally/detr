@@ -189,7 +189,7 @@ path/to/coco/
 ## Training
 To train baseline DETR on a single node with 8 gpus for 300 epochs run:
 ```
-python main.py --coco_path ./ --resume ./output/checkpoint0999.pth --epoch=2000 --num_classes=6
+python main.py --coco_path ./animal --resume ./output/checkpoint0999.pth --epoch=2000 --num_classes=6
 ```
 A single epoch takes 28 minutes, so 300 epoch training
 takes around 6 days on a single machine with 8 V100 cards.
