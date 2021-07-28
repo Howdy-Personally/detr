@@ -325,13 +325,22 @@ def build(args):
 
     transformer = build_transformer(args)
 
-    model = DETR(
-        backbone,
-        transformer,
-        num_classes=num_classes,
-        num_queries=args.num_queries,
-        aux_loss=args.aux_loss,
-    )
+    model = torch.hub.load('facebookresearch/detr','detr_resnet50',pretrained=False,num_classes=10)
+    checkpoint = torch.hub.load_state_dict_from_url(
+        url='https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth',
+        map_location='cpu',
+        check_hash=True)
+    del checkpoint["model"]["class_embed.weight"]
+    del checkpoint["model"]["class_embed.bias"]
+    model.load_state_dict(checkpoint["model"],strict=False)
+
+    # model = DETR(
+    #     backbone,
+    #     transformer,
+    #     num_classes=num_classes,
+    #     num_queries=args.num_queries,
+    #     aux_loss=args.aux_loss,
+    # )
     if args.masks:
         model = DETRsegm(model, freeze_detr=(args.frozen_weights is not None))
     matcher = build_matcher(args)

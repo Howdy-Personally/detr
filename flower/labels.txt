@@ -1,0 +1,7 @@
+__ignore__
+dark bg
+dark leaf
+dark petal
+light bg
+light leaf
+light petal

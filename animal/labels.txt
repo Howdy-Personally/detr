@@ -1,0 +1,10 @@
+__ignore__
+darkbg
+closemouth
+taildown
+stand
+lightbg
+openmouth
+tailup
+fly
+foot
